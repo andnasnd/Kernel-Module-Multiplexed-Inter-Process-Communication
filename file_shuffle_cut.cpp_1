@@ -1,0 +1,39 @@
+110     // report statistics for what was done
+51         iter++;
+11 
+69         cout << "Could not open file " <<  argv[file_name_index] << endl;
+24 // struct to hold a numbered line of text
+35     return result;
+17 
+109 
+26     numbered_line() : number(0) {}
+101         ostringstream file_name_stream;
+115     return success;
+39 int write_fragment (vector<numbered_line>::const_iterator iter,
+108     }
+2 // Purpose: reads lines of a text file and numbers them, shuffles them, and
+75     numbered_line nl;
+56 
+59 
+18 // constants for command line indexing
+32 int usage (const char *program_name, int result) {
+116 }
+91 
+86     istringstream iss (argv[fragments_index]);
+57 
+12 // return codes for success or failure
+14 const int wrong_number_of_arguments = -1;
+42 {
+27     int number;
+62         // suggest how to run the program correctly
+104                                       file_name_stream.str().c_str());
+58 int main (int argc, char *argv[]) {
+30 
+96 
+13 const int success = 0;
+68     if (!ifs) {
+3 //          cuts them into separate files with fragments of the original text
+114 
+71     }
+102         file_name_stream << argv[file_name_index] << "_" << fragment;
+9 #include <sstream>

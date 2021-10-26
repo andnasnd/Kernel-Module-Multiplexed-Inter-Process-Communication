@@ -1,0 +1,39 @@
+22 const int expected_argc = 3;
+66     // check ability to open input file
+80 
+103         int result =  write_fragment (start, stop,
+79     }
+89         fragments = nlv.size();
+81     // shuffle the numbered lines in the vector
+106         start += lines_per_fragment;
+0 // Program: file_shuffle_cut.cpp
+94     vector<numbered_line>::const_iterator start = nlv.begin();
+41                     const char * filename)
+88     if (fragments > nlv.size()) {
+28     string text;
+52     }
+43     ofstream ofs (filename);
+16 const int output_file_open_failed = -3;
+60     // check command line argument count
+49     while (iter != stop) {
+105         if (result != success) return result;
+84     // extract (and possibly reduce) number of fragments to create
+72 
+29 };
+112     cout << fragments << " fragments" << endl;
+6 #include <fstream>
+45         cout << "Could not open output file " <<  filename << endl;
+53 
+76     while (getline(ifs, nl.text)) {
+8 #include <algorithm>
+33     cout << "usage: " << program_name 
+37 
+15 const int input_file_open_failed = -2;
+25 struct numbered_line {
+55 }
+70         return usage(argv[program_name_index], input_file_open_failed);
+31 // outputs proper usage syntax for the program
+82     random_shuffle (nlv.begin(), nlv.end());
+47     }
+111     cout << nlv.size() << " lines" << endl;
+107         stop = start + lines_per_fragment;

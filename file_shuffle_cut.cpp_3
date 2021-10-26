@@ -1,0 +1,39 @@
+90     }
+34          << " <file name> <number of fragments>" << endl;
+23 
+74     vector<numbered_line> nlv;
+77         nlv.push_back(nl);
+19 const int program_name_index = 0;
+85     int fragments;
+44     if (!ofs) {
+93     int lines_per_fragment = nlv.size() / fragments;
+54     return success;
+97     // output fragments of shuffled text into files    
+1 // Author: Chris Gill
+38 // writes out a range of lines into a named output file
+95     vector<numbered_line>::const_iterator stop = start + lines_per_fragment;
+4 
+21 const int fragments_index = 2;
+99         if (stop > nlv.end() || fragment == fragments) stop = nlv.end();
+5 #include <iostream>
+78         nl.number++;
+65 
+50         ofs << iter->number << " " << iter->text << endl;
+46         return output_file_open_failed;
+7 #include <vector>
+98     for (int fragment = 1; fragment <= fragments; ++fragment) {
+64     }
+20 const int file_name_index = 1;
+63         return usage(argv[program_name_index], wrong_number_of_arguments);
+100 
+73     // fill a vector with numbered lines from the file
+10 using namespace std;
+83 
+113     cout << lines_per_fragment << " lines_per_fragment" << endl;
+92     // calculate number of lines per fragment, initialize iterators
+48 
+61     if (argc != expected_argc) {
+36 }
+87     iss >> fragments;
+67     ifstream ifs (argv[file_name_index]);
+40                     vector<numbered_line>::const_iterator stop,
